@@ -8,9 +8,8 @@ import {
   Type,
   Input,
   NgZone,
-  OpaqueToken,
+  InjectionToken,
   Injector,
-  ReflectiveInjector,
   ViewChild
 } from '@angular/core';
 import * as GoldenLayout from 'golden-layout';
@@ -21,8 +20,8 @@ import {
   ComponentInitCallback 
 } from './golden-layout.service';
 
-export const GoldenLayoutContainer = new OpaqueToken('GoldenLayoutContainer');
-export const GoldenLayoutComponentState = new OpaqueToken('GoldenLayoutComponentState');
+export const GoldenLayoutContainer = new InjectionToken('GoldenLayoutContainer');
+export const GoldenLayoutComponentState = new InjectionToken('GoldenLayoutComponentState');
 
 /**
  * Type guard which determines if a component implements the GlOnResize interface.
@@ -132,7 +131,7 @@ export class GoldenLayoutComponent implements OnInit, ComponentInitCallbackFacto
    * component container, and initial component state.
    */
   private _createComponentInjector(container: GoldenLayout.Container, componentState: any): Injector {
-    return ReflectiveInjector.resolveAndCreate([
+    return Injector.create([
       {
         provide: GoldenLayoutContainer,
         useValue: container

@@ -1,6 +1,6 @@
-import { OpaqueToken, Provider } from '@angular/core';
+import { InjectionToken, Provider } from '@angular/core';
 
-export const GoldenLayoutStateStore = new OpaqueToken('GoldenLayoutStateStore');
+export const GoldenLayoutStateStore = new InjectionToken('GoldenLayoutStateStore');
 
 export interface StateStore {
   writeState(state:any): void;

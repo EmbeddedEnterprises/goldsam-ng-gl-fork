@@ -29,5 +29,8 @@
     "demo",
     "tests",
     "dist"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "preserveWhitespaces": false
+  }
 }
