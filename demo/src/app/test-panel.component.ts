@@ -13,7 +13,7 @@ import * as GoldenLayout from 'golden-layout';
 })
 export class TestPanelComponent implements GlOnResize, GlOnHide, GlOnShow, GlOnTab {
 
-  constructor(@Inject(GoldenLayoutComponentState) private state: any,
+  constructor(@Inject(GoldenLayoutComponentState) public state: any,
               @Inject(GoldenLayoutContainer) private container: GoldenLayout.Container) {}
 
   public onInput(e: Event): void {
